@@ -43,7 +43,8 @@
             <td id="search_bar" colspan="3" align="center">
                 <input id="search" name="query"
                        type="text" style="background:transparent"
-                       value=""/>
+                       value=""
+                       onkeydown="if (event.keyCode == 13) window.location = 'http://google.com/search?q=' + document.getElementById('search').value"/>
             </td>
             <td>
                 <div id="google_search"><input onclick="window.location = 'http://google.com/search?q=' + document.getElementById('search').value" type="submit" name="google" value=""/></div>
@@ -107,7 +108,7 @@
         <td colspan=5 style="background: none; text-align: left; padding-left: 5px; font-size: 14px; color: #333;"><p>
             Ads</p>
     </tr>
-    <tr class="secondary_options ads">
+    <tr class="advertising secondary_options ads">
         <td>
             <a href="http://dcru.org/volunteers">Research Studies</a>
         </td>
@@ -122,7 +123,7 @@
             <a href="http://live.gotriangle.org">GoLive w/ GoTriangle</a>
         </td>
     </tr>
-    <tr class="secondary_options ads">
+    <tr class="advertising secondary_options ads">
         <td>
             <a href="http://livebelmont.com">Live at Belmont</a>
         </td>
