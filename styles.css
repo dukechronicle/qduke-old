@@ -245,13 +245,6 @@ input, button, textarea, select {
     background: url('sprite.png');
     background-position: 0 -161px; /* small_button_background_hover */
 }
-
-#selection_menu .ncaa td a:hover {
-    border: 3px #962120 solid;
-    background: url('images/sports_small_button_background_hover.png');
-    background-position: 0 0px;
-}
-
 .feedtitle {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
