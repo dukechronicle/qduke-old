@@ -156,6 +156,34 @@
 </div>
 <script type="text/javascript">
     document.getElementById('search').focus();
+
+    // Cross-browser implementation of element.addEventListener()
+    function addListener(element, type, expression, bubbling) {
+        bubbling = bubbling || false;
+
+        if (window.addEventListener) { // Standard
+            element.addEventListener(type, expression, bubbling);
+            return true;
+        } else if (window.attachEvent) { // IE
+            element.attachEvent('on' + type, expression);
+            return true;
+        } else return false;
+    }
+
+    function click(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var t = (window.event) ? e.srcElement : e.target;
+        if (t.nodeName == 'A') {
+            if (t.href.indexOf(location.host) == -1) {
+                var url = t.href.match(/:\/\/(.[^/]+)/)[1].replace(/(www.)/g, "").replace(/[^a-z|A-Z|./]/g, "");
+                _gat._getTrackerByName()._trackEvent("Outbound Links", url);
+                setTimeout('document.location = "' + t.href + '"', 100);
+            }
+        }
+    }
+
+    addListener(document, 'click', click);
 </script>
 </body>
 </html>
