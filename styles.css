@@ -1,308 +1,232 @@
-html {
-    color: #000;
-    background: #FFF;
-    overflow-y: scroll;
-}
-
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
-    margin: 0;
-    padding: 0;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-fieldset, img {
-    border: 0;
-}
-
-address, caption, cite, code, dfn, em, strong, th, var, optgroup {
-    font-style: inherit;
-    font-weight: inherit;
-}
-
-del, ins {
-    text-decoration: none;
-}
-
-li {
-    list-style: none;
-}
-
-caption, th {
-    text-align: left;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-size: 100%;
-    font-weight: normal;
-}
-
-q:before, q:after {
-    content: '';
-}
-
-abbr, acronym {
-    border: 0;
-    font-variant: normal;
-}
-
-sup {
-    vertical-align: baseline;
-}
-
-sub {
-    vertical-align: baseline;
-}
-
-legend {
-    color: #000;
-}
-
-input, button, textarea, select, optgroup, option {
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-}
-
-input, button, textarea, select {
-    *font-size: 100%;
-}
+html{color:#000;background:#FFF;overflow-y:scroll;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
 
 body {
-    color: #001950;
-    width: 855px;
-    margin: 0px auto;
-    font-family: Arial, Helvetica, sans-serif;
+	color: #001950;
+	width: 855px;
+	margin: 0px auto;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 #logo {
-    text-align: center;
-    width: 230px;
-    height: 62px;
-    overflow: hidden;
-    margin: 15px auto;
+	text-align: center;
+	width: 230px;
+	height: 62px;
+	overflow: hidden;
+	margin: 15px auto;
 }
 
 #logo a {
-    height: 62px;
-    width: 230px;
-    display: block;
-    background-image: url('sprite.png');
-    background-position: -594px 0; /* qDuke logo */
+	height: 62px;
+	width: 230px;
+	display: block;
+	background-image: url('sprite.png');
+	background-position: -594px 0; /* qDuke logo */
 }
 
 #top-right-ad {
-    float: right;
+  float: right;
 }
 
 #chronicle_label {
-    width: 112px;
-    height: 17px;
-    overflow: hidden;
-    margin-bottom: 3px;
+	width: 112px;
+	height: 17px;
+	overflow: hidden;
+	margin-bottom: 3px;
 }
 
 #chronicle_label img {
-    margin-left: -432px; /* chronicle_label */
+	margin-left: -432px;  /* chronicle_label */
 }
-
 #selection_menu {
-    clear: both;
-    background-color: white;
+  	clear: both;
+	background-color: white;
 }
 
 #selection_menu a {
-    color: #001950;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
+	color: #001950;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 15px;
 }
 
 #selection_menu td {
-    background-image: url('sprite.png');
-    background-position: -1864px 0; /* small_button_background */
-    vertical-align: middle;
-    text-align: center;
-    border: 5px solid white;
-    width: 160px;
-    font-family: Arial, Helvetica, sans-serif;
+	background-image: url('sprite.png');
+	background-position: -1864px 0; /* small_button_background */
+	vertical-align: middle;
+	text-align: center;
+	border: 5px solid white;
+	width: 160px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 #search-table .search_options td {
-    background: none;
-    height: 40px;
+	background: none;
+  height: 40px;
 }
-
 #search-table #search_bar {
-    background: url('sprite.png');
-    background-position: -1306px 0; /* search_overlay */
+	background: url('sprite.png');
+	background-position: -1306px 0;  /* search_overlay */
 }
-
 #search-table input#search {
-    padding-top: 0px; /* needs to add up to 46 with height */
-    height: 40px;
-    padding-left: 9px; /* needs to add up to 506 with width */
-    width: 497px;
-    color: #929396;
-    font-size: 25px;
-    color: #737477;
+	border: none;
+	padding-top: 0px; /* needs to add up to 46 with height */
+	height: 40px;
+	padding-left: 9px; /* needs to add up to 506 with width */
+	width: 497px;
+	color: 929396;
+	font-size: 25px;
+	color: #737477;
 }
-
 #google_search input, #duke_search input {
-    cursor: pointer;
-    height: 46px;
-    width: 166px;
-    overflow: hidden;
-    border: none;
+	cursor: pointer;
+	height: 46px;
+	width: 166px;
+	overflow: hidden;
+	border: none;
 }
 
 #google_search input {
-    background: url('sprite.png');
-    background-position: -1090px 0; /* search_background_google */
+	background: url('sprite.png');
+	background-position: -1090px 0; /* search_background_google */
 }
 
 #duke_search input {
-    background: url('sprite.png');
-    background-position: -874px 0; /* search_background_duke */
+	background: url('sprite.png');
+	background-position: -874px 0;  /* search_background_duke */
 }
-
 /* IE Hack */
 .ie7 #search-table input#search, .ie8 #search-table input#search {
-    padding-top: 8px; /* needs to add up to 46 with height */
-    height: 38px;
+	padding-top: 8px; /* needs to add up to 46 with height */
+	height: 38px;
 }
 
 .ie7 #google_search input, .ie7 #duke_search input {
-    position: relative;
-    top: -1px;
+	position: relative;
+	top: -1px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-    #selection_menu input#search {
-        padding-top: 7px; /* needs to add up to 46 with height */
-        height: 39px;
-    }
+	#selection_menu input#search {
+		padding-top: 7px; /* needs to add up to 46 with height */
+		height: 39px;
+	}
 }
 
 #selection_menu .primary_options td {
-    height: 105px;
-    background: url('sprite.png');
-    background-position: 0 0; /* big_button_background */
-    width: 166px;
-    height: 111px;
+	height: 105px;
+	background: url('sprite.png');
+	background-position: 0 0;	/* big_button_background */
+	width: 166px;
+	height: 111px;
 }
 
 #selection_menu .primary_options td a {
-    line-height: 103px;
-    font-size: 23px;
-    display: block;
-    height: 105px;
-    width: 160px;
-    border: 3px transparent solid;
+	line-height: 103px;
+	font-size: 23px;
+  display: block;
+  height: 105px;
+  width: 160px;
+  border: 3px transparent solid;
 }
 
 #selection_menu .primary_options td a:hover {
-    color: white;
-    border: 3px #27468b solid;
-    background: url('sprite.png');
-    background-position: -216px 0; /* big_button_background_hover */
-    width: 160px;
-    height: 105px;
+	color: white;
+  	border: 3px #27468b solid;
+	background: url('sprite.png');
+	background-position: -216px 0; /* big_button_background_hover */
+	width: 160px;
+	height: 105px;
 }
 
 #selection_menu .secondary_options td {
-    height: 40px;
+  height: 40px;
 }
 
 #selection_menu .secondary_options td a {
-    line-height: 40px;
-    display: block;
-    height: 40px;
-    width: 160px;
-    border: 3px transparent solid;
-    vertical-align: middle;
+	line-height: 40px;
+  display: block;
+  height: 40px;
+  width: 160px;
+	border: 3px transparent solid;
+	vertical-align: middle;
 }
 
 #selection_menu .secondary_options td a:hover {
-    color: white;
-    border: 3px #27468b solid;
-    background: url('sprite.png');
-    background-position: 0 -161px; /* small_button_background_hover */
+	color: white;
+  border: 3px #27468b solid;
+	background: url('sprite.png');
+	background-position: 0 -161px; /* small_button_background_hover */
 }
 
 #selection_menu .ncaa td a:hover {
-    border: 3px #962120 solid;
-    background: url('images/sports_small_button_background_hover.png');
-    background-position: 0 0px;
+	border: 3px #962120 solid;
+	background: url('images/sports_small_button_background_hover.png');
+	background-position: 0 0px;
 }
 
 .feedtitle {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 14px;
-    font-weight: bold;
-    text-transform: capitalize;
-    font-variant: normal;
-    color: #AAA;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: #999;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	line-height: 14px;
+	font-weight: bold;
+	text-transform: capitalize;
+	font-variant: normal;
+	color: #AAA;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #999;
 }
 
 #footer p {
-    text-align: center;
-    font-size: .9em;
+	text-align: center;
+	font-size: .9em;
 }
 
 #footer a {
-    color: #001950;
-    text-decoration: none;
+	color: #001950;
+	text-decoration: none;
 }
 
 #footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;	
 }
 
 #chronicle {
-    font-size: .9em;
-    margin: 20px 0px 30px 6px;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    width: 850px;
-    display: inherit;
+	font-size: .9em;
+	margin: 20px 0px 30px 6px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	width: 850px;
+	display: inherit;
 }
 
 #chronicle a {
-    color: #001950;
-    text-decoration: none;
+	color: #001950;
+	text-decoration: none;
 }
 
 #chronicle a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 #chronicle .row td {
-    vertical-align: top;
-    padding: 7px 0px;
-    height: 20px;
-    padding-right: 7px;
+	vertical-align: top;
+	padding: 7px 0px;
+	height: 20px;
+	padding-right: 7px;
 }
 
 #advertisements-label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 #selection_menu tr.ads td {
-    background-image: none;
-
-    background-color: #F2F2F2;
-    font-weight: normal;
+	background-image: none;
+	
+	background-color: #F2F2F2;
+	font-weight: normal;
 }
 
 #selection_menu tr.ads td a {
-    color: #666;
+color: #666;
 }
