@@ -72,7 +72,10 @@ input, button, textarea, select {
     *font-size: 100%;
 }
 
-body {
+*:focus {
+    outline: none;
+}
+#shell {
     color: #001950;
     width: 855px;
     margin: 0px auto;
@@ -133,17 +136,21 @@ body {
 }
 
 #search-table {
+    margin-left: 5px;
     clear: both;
 }
+
 
 #search-table .search_options td {
     background: none;
     height: 40px;
+    padding-right: 5px;
 }
 
 #search-table #search_bar {
     background: url('sprite.png');
     background-position: -1306px 0; /* search_overlay */
+    padding-right: 7px;
 }
 
 #search-table input#search {
