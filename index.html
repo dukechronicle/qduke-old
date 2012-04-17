@@ -171,8 +171,11 @@
     }
 
     function click(e) {
-        e.preventDefault();
-        e.stopPropagation();
+        if (e.preventDefault) e.preventDefault();
+        else e.returnValue = false
+
+        if (e.stopPropagation) e.stopPropagation();
+        else window.event.cancelBubble = true;
         var t = (window.event) ? e.srcElement : e.target;
         if (t.nodeName == 'A') {
             if (t.href.indexOf(location.host) == -1) {
@@ -184,6 +187,11 @@
     }
 
     function search(target) {
+        if (e.preventDefault) e.preventDefault();
+        else e.returnValue = false
+
+        if (e.stopPropagation) e.stopPropagation();
+        else window.event.cancelBubble = true;
         var redirect;
         var query = document.getElementById('search').value;
         if (target == "duke") {
