@@ -44,13 +44,13 @@
                 <input id="search" name="query"
                        type="text" style="background:transparent"
                        value=""
-                       onkeydown="if (event.keyCode == 13) search('google');" />
+                       onkeydown="if (event.keyCode == 13) search(event)"/>
             </td>
             <td>
-                <div id="google_search"><input onclick="search('google')" type="submit" name="google" value=""/></div>
+                <div id="google_search"><input onclick="search(event)" type="submit" name="google" value=""/></div>
             </td>
             <td>
-                <div id="duke_search"><input onclick= "search('duke')" type="submit" name="duke" value=""/></div>
+                <div id="duke_search"><input onclick= "search(event)" type="submit" name="duke" value=""/></div>
             </td>
         </tr>
         </tbody>
@@ -186,18 +186,21 @@
         }
     }
 
-    function search(target) {
+    function search(e) {
         if (e.preventDefault) e.preventDefault();
         else e.returnValue = false
 
         if (e.stopPropagation) e.stopPropagation();
         else window.event.cancelBubble = true;
+
+        var target = e.target.name || "google";
+
         var redirect;
         var query = document.getElementById('search').value;
         if (target == "duke") {
-            redirect = 'http://google.com/search?q=' + query;
-        } else {
             redirect = 'http://duke.edu/search/?q=' + query;
+        } else {
+            redirect = 'http://google.com/search?q=' + query;
         }
         _gat._getTrackerByName()._trackEvent("Search", query);
         setTimeout('document.location = "' + redirect + '"', 100);
