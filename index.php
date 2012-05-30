@@ -1,3 +1,73 @@
+<?php
+
+   $json = <<<END
+{
+    "links": [
+        [
+            { "Blackboard": "https://courses.duke.edu/webapps/login?action=portal_direct_entry" },
+            { "Sakai": "https://sakai.duke.edu/portal/clogin" },
+            { "ACES": "http://aces.duke.edu" },
+            { "Webmail": "http://webmail.duke.edu" },
+            { "The Chronicle": "http://dukechronicle.com/" }
+        ],
+        [
+            { "DukeCard": "https://dco3.auxserv.duke.edu/olco" },
+            { "Facebook": "http://www.facebook.com/" },
+            { "Gmail": "http://www.gmail.com/" },
+            { "Youtube": "http://youtube.com" },
+            { "ESPN": "http://espn.com" }
+        ],
+        [
+            { "Library": "http://www.lib.duke.edu/" },
+            { "Food": "http://dining.duke.edu/where/delivery/index.php" },
+            { "Dining Hours": "http://dining.duke.edu/where/oncampus/index.php" },
+            { "Bus Tracking": "http://www.duke.transloc.com" },
+            { "Short Term Illness": "http://trinity.duke.edu/academic-requirements?p=policy-short-term-illness-notification" }
+        ],
+        [
+            { "Academic Calendar": "http://registrar.duke.edu/registrar/studentpages/student/acacad2012.html" },
+            { "CourseRank": "https://duke.courserank.com/CourseRank/main" },
+            { "eRecruiting": "http://duke.experience.com/er/security/login.jsp" },
+            { "Textbook Shopping": "http://textbookshepherd.com" },
+            { "Schedulator": "http://www.dukeschedulator.com/" }
+        ]
+    ],
+
+    "ads": [
+        [
+            { "Research Studies": "http://dcru.org/volunteers" },
+            { "Taxi": "http://rdutaxiride.com" },
+            { "Senior Beach Week": "http://www.oceansands.com/" },
+            { "Charlene's Safe Ride": "http://www.charlenesaferide.com/" },
+            { "GoLive w/ GoTriangle": "http://live.gotriangle.org" }
+        ],
+        [
+            { "Live at Belmont": "http://livebelmont.com" },
+            { "Taxicab Service": "http://www.rduairportcarservice.com" },
+            { "Custom Apparel": "http://campusenterprisesllc.com/" },
+            { "Movies and Concerts": "http://www.carolinatheatre.org/duke" },
+            { "Event SPAce": "http://www.beautynthebull.com/" }
+        ]
+    ]
+
+}
+END;
+
+    $content = json_decode($json, true);
+
+    function render_link_row($links)
+    {
+        for ($i = 0; $i < count($links) - 1; $i++) {
+            foreach ($links[$i] as $name => $url) {
+                echo "<td><a href=\"$url\">$name</a></td>";
+            }
+        }
+        foreach (end($links) as $name => $url) {
+            echo "<td class=\"last\"><a href=\"$url\">$name</a></td>";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]>
 <html class="ie6"> <![endif]-->
@@ -57,14 +127,9 @@
 </table>
 <table id="selection_menu">
     <tr class="primary_options">
-        <td><a
-                href="https://courses.duke.edu/webapps/login?action=portal_direct_entry">Blackboard</a>
-        </td>
-        <td><a href="https://sakai.duke.edu/portal/clogin">Sakai</a></td>
-        <td><a href="http://aces.duke.edu">ACES</a></td>
-        <td><a href="http://webmail.duke.edu/">Webmail</a></td>
-        <td class="last"><a href="http://dukechronicle.com/">The Chronicle</a>
-        </td>
+      <?php
+         render_link_row($content['links'][0]);
+      ?>
     </tr>
     <tr class="secondary_options">
         <td><a href="https://dco3.auxserv.duke.edu/olco">DukeCard</a></td>
