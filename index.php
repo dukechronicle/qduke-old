@@ -28,7 +28,7 @@
             { "Academic Calendar": "http://registrar.duke.edu/registrar/studentpages/student/acacad2012.html" },
             { "CourseRank": "https://duke.courserank.com/CourseRank/main" },
             { "eRecruiting": "http://duke.experience.com/er/security/login.jsp" },
-            { "Textbook Shopping": "http://textbookshepherd.com" },
+            { "RateMyProfessor": "http://ratemyprofessors.com/SelectTeacher.jsp?sid=1350" },
             { "Schedulator": "http://www.dukeschedulator.com/" }
         ]
     ],
@@ -55,6 +55,7 @@ END;
 
     $content = json_decode($json, true);
 
+
     function render_link_row($links)
     {
         for ($i = 0; $i < count($links) - 1; $i++) {
@@ -64,6 +65,18 @@ END;
         }
         foreach (end($links) as $name => $url) {
             echo "<td class=\"last\"><a href=\"$url\">$name</a></td>";
+        }
+    }
+
+    function render_ad_row($links)
+    {
+        for ($i = 0; $i < count($links) - 1; $i++) {
+            foreach ($links[$i] as $name => $url) {
+                echo "<td><a rel=\"nofollow\" href=\"$url\">$name</a></td>";
+            }
+        }
+        foreach (end($links) as $name => $url) {
+            echo "<td class=\"last\"><a rel=\"nofollow\" href=\"$url\">$name</a></td>";
         }
     }
 ?>
@@ -131,80 +144,24 @@ END;
          render_link_row($content['links'][0]);
       ?>
     </tr>
-    <tr class="secondary_options">
-        <td><a href="https://dco3.auxserv.duke.edu/olco">DukeCard</a></td>
-        <td><a href="http://www.facebook.com/">Facebook</a></td>
-        <td><a href="http://www.gmail.com/">Gmail</a></td>
-        <td><a href="http://youtube.com">YouTube</a></td>
-        <td class="last"><a href="http://espn.com">ESPN</a></td>
-        <!--<td class="last"><a href="http://www.lib.duke.edu/">Library</a></td>-->
-    </tr>
-    <tr class="secondary_options">
-        <td><a href="http://www.lib.duke.edu/">Library</a></td>
-        <td><a href="http://dining.duke.edu/where/delivery/index.php">Food
-            Delivery</a></td>
-        <td><a href="http://dining.duke.edu/where/oncampus/index.php">Dining Hours</a></td>
-        <td><a href="http://www.duke.transloc.com">Bus Tracking</a></td>
-        <!--<td><a href="http://map.duke.edu/">Campus Map</a></td>-->
-        <td class="last"><a
-                href="http://trinity.duke.edu/academic-requirements?p=policy-short-term-illness-notification">Short
-            Term Illness </a></td>
-    </tr>
-    <tr class="secondary_options">
-        <td><a
-                href="http://registrar.duke.edu/registrar/studentpages/student/acacad2012.html">Academic
-            Calendar</a></td>
-        <!--<td><a href="http://dukelist.duke.edu/">DukeLIST</a></td>-->
-        
-        <td><a
-                href="https://duke.courserank.com/CourseRank/main">CourseRank</a>
-        </td>
-        
-        <!--<td><a
-                href="http://ratemyprofessors.com/SelectTeacher.jsp?sid=1350">RateMyProfessor</a>
-        </td>-->
-        <td><a href="http://duke.experience.com/er/security/login.jsp">eRecruiting</a></td>
-        <td><a href="http://textbookshepherd.com">Textbook Shopping</a></td>
-        <td class="last"><a
-          href="http://www.dukeschedulator.com/">Schedulator</a>
-        </td>
-    </tr>
+    <?php
+       for ($i = 1; $i < count($content['links']); $i++) {
+           echo '<tr class="secondary_options">';
+           render_link_row($content['links'][$i]);
+           echo '</tr>';
+       }
+    ?>
     <tr class="ad-label">
         <td colspan=5 style="background: none; text-align: left; padding-left: 5px; font-size: 14px; color: #333;"><p>
             Ads</p>
     </tr>
-    <tr class="advertising secondary_options ads">
-        <td>
-            <a href="http://dcru.org/volunteers">Research Studies</a>
-        </td>
-        <td><a href="http://rdutaxiride.com">Taxi</a>
-        </td>
-        <td>
-            <a href="http://www.oceansands.com/">Senior Beach Week</a></td>
-        <td>
-            <a href="http://www.charlenesaferide.com/">Charlene's Safe Ride</a>
-        </td>
-        <td class="last">
-            <a href="http://live.gotriangle.org">GoLive w/ GoTriangle</a>
-        </td>
-    </tr>
-    <tr class="advertising secondary_options ads">
-        <td>
-            <a href="http://livebelmont.com">Live at Belmont</a>
-        </td>
-        <td>
-            <a href="http://www.rduairportcarservice.com">Taxicab Service</a>
-        </td>
-        <td>
-            <a href="http://campusenterprisesllc.com/">Custom Apparel</a>
-        </td>
-        <td>
-            <a href="http://www.carolinatheatre.org/duke">Movies and Concerts</a>
-        </td>
-        <td class="last">
-            <a href="http://www.beautynthebull.com/">Event SPAce</a>
-        </td>
-    </tr>
+    <?php
+       foreach ($content['ads'] as $row) {
+           echo '<tr class="advertising secondary_options ads">';
+           render_ad_row($row);
+           echo '</tr>';
+       }
+    ?>
 </table>
 
 <br/>
